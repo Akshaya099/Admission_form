@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form method="POST" action="/">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <div class="input-wrapper">
+                    <input type="email" id="email" name="email" placeholder="Say your email" required>
+                    <button type="button" class="mic-btn" data-field="email">
+                        <img src="{{ url_for('static', filename='mic.svg') }}" alt="Microphone">
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <div class="input-wrapper">
+                    <input type="password" id="password" name="password" placeholder="Say your password" required>
+                    <button type="button" class="mic-btn" data-field="password">
+                        <img src="{{ url_for('static', filename='mic.svg') }}" alt="Microphone">
+                    </button>
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">Login</button>
+        </form>
+        <p>Don't have an account? <a href="{{ url_for('signup') }}">Sign up here</a></p>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

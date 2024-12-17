@@ -1,0 +1,182 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('/static/adm_bg.jpg') no-repeat center center fixed; /* College-related background */
+    background-size: cover;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Overlay for better readability */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
+    z-index: 0;
+}
+
+/* Shared Container Styling */
+.container {
+    background: rgba(255, 255, 255, 0.7); /* Translucent white background */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+
+/* Page Heading */
+h1 {
+    font-size: 2.5rem;
+    color: #2c3e50; /* Dark navy blue */
+    margin-bottom: 1.5rem;
+    font-family: 'Georgia', serif;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    font-size: 1rem;
+    color: #444;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #2980b9; /* Blue focus border */
+}
+
+input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Microphone Button Styling */
+.mic-btn {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.mic-btn img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0.5);
+}
+
+.mic-btn img:hover {
+    filter: brightness(1);
+}
+
+/* Submit Button */
+.submit-btn {
+    background: linear-gradient(to right, #2980b9, #6dd5fa); /* Gradient blue */
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(to right, #6dd5fa, #2980b9); /* Reverse gradient */
+    transform: translateY(-2px);
+}
+
+/* Links for Login/Signup Navigation */
+a {
+    color: #2980b9;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Specific Styling for Login/Signup Forms */
+.login-signup-container {
+    padding: 2.5rem 2rem;
+}
+
+.login-signup-container h1 {
+    color: #2c3e50; /* Dark navy blue */
+}
+
+.login-signup-container p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    input {
+        font-size: 0.9rem;
+    }
+
+    .submit-btn {
+        font-size: 0.9rem;
+        padding: 0.7rem;
+    }
+
+    .mic-btn img {
+        width: 18px;
+        height: 18px;
+    }
+}

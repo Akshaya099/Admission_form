@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice-Based College Admission Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>College Admission Form</h1>
+        <form id="voiceForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <div class="input-wrapper">
+                    <input type="text" id="name" placeholder="Say your name" required>
+                    <button type="button" class="mic-btn" data-field="name">
+                        <img src="{{ url_for('static', filename='mic.svg') }}" alt="Microphone">
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <div class="input-wrapper">
+                    <input type="email" id="email" placeholder="Say your email" required>
+                    <button type="button" class="mic-btn" data-field="email">
+                        <img src="{{ url_for('static', filename='mic.svg') }}" alt="Microphone">
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <div class="input-wrapper">
+                    <input type="tel" id="phone" placeholder="Say your phone number" required>
+                    <button type="button" class="mic-btn" data-field="phone">
+                        <img src="{{ url_for('static', filename='mic.svg') }}" alt="Microphone">
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <div class="input-wrapper">
+                    <input type="text" id="address" placeholder="Say your address" required>
+                    <button type="button" class="mic-btn" data-field="address">
+                        <img src="{{ url_for('static', filename='mic.svg') }}" alt="Microphone">
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="course">Course:</label>
+                <div class="input-wrapper">
+                    <input type="text" id="course" placeholder="Say your course" required>
+                    <button type="button" class="mic-btn" data-field="course">
+                        <img src="{{ url_for('static', filename='mic.svg') }}" alt="Microphone">
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth (DD-MM-YYYY):</label>
+                <div class="input-wrapper">
+                    <input type="text" id="dob" placeholder="Say your date of birth" required>
+                    <button type="button" class="mic-btn" data-field="dob">
+                        <img src="{{ url_for('static', filename='mic.svg') }}" alt="Microphone">
+                    </button>
+                </div>
+            </div>
+            
+            
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <div class="input-wrapper">
+                    <input type="text" id="gender" placeholder="Say your gender" required>
+                    <button type="button" class="mic-btn" data-field="gender">
+                        <img src="{{ url_for('static', filename='mic.svg') }}" alt="Microphone">
+                    </button>
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
