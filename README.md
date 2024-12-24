@@ -31,9 +31,8 @@ The project is deployed and available at: [**VOICE FORM**](<https://voice-based-
 ### Steps to Run Locally  
 1. **Clone the Repository**  
    ```bash  
-   git clone <your-repository-link>  
-   cd <repository-name>  
-**](<your-deployment-linkhttps://voice-based-admission-link.onrender.com/signup>)  
+   git clone <https://github.com/Akshaya099/Admission_form.git>  
+   cd <Admission-form>  
 
 
 
