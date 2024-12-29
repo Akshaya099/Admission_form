@@ -1,59 +1,75 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, redirect, url_for, request, session
 
 app = Flask(__name__)
+app.secret_key = 'your_secret_key'
 
-# Temporary in-memory user data (replace with a database for production)
-users = {}
+# In-memory storage for users (you can replace this with a database)
+users_db1 = {}
 
-@app.route("/", methods=["GET", "POST"])
-def login():
-    if request.method == "POST":
-        email = request.form.get("email")
-        password = request.form.get("password")
-        
-        # Check if user exists and password matches
-        if email in users and users[email] == password:
-            return redirect(url_for("index"))
-        else:
-            return "Invalid login credentials. Please try again."
-    
-    return render_template("login.html")
+@app.route('/')
+def home():
+    return render_template('home.html')
 
-@app.route("/signup", methods=["GET", "POST"])
+@app.route('/signup', methods=['GET', 'POST'])
 def signup():
-    if request.method == "POST":
-        email = request.form.get("email")
-        password = request.form.get("password")
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
         
         # Check if user already exists
-        if email in users:
-            return "User already exists. Please log in."
-        else:
-            users[email] = password
-            return redirect(url_for("login"))
-    
-    return render_template("signup.html")
-
-@app.route("/form", methods=["GET", "POST"])
-def index():
-    if request.method == "POST":
-        # Process form data
-        name = request.form.get("name")
-        dob = request.form.get("dob")
-        email = request.form.get("email")
-        phone = request.form.get("phone")
-        address = request.form.get("address")
-        parent = request.form.get("parent")
-        grade = request.form.get("class")
-        school = request.form.get("school")
+        if email in users_db1:
+            return 'User already exists. Please log in.'
         
-        return (f"Admission Form Submitted!<br>"
-                f"Name: {name}<br>Date of Birth: {dob}<br>Email: {email}<br>"
-                f"Phone: {phone}<br>Address: {address}<br>"
-                f"Parent/Guardian: {parent}<br>Class: {grade}<br>"
-                f"Previous School: {school}")
+        # Store user details (password is stored in plain text here)
+        users_db1[email] = password
+        
+        # Redirect to form page after signup
+        session['email'] = email
+        return redirect(url_for('index'))
     
-    return render_template("index.html")
+    return render_template('signup.html')
 
-if __name__ == "__main__":
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        
+        # Check if the user exists and the password matches
+        if email in users_db1 and users_db1[email] == password:
+            session['email'] = email
+            return redirect(url_for('index'))
+        else:
+            return 'Invalid credentials. Please try again.'
+    
+    return render_template('login.html')
+
+@app.route('/index', methods=['GET', 'POST'])
+def index():
+    if 'email' not in session:
+        return redirect(url_for('login'))
+    
+    if request.method == 'POST':
+        return redirect(url_for('submit'))
+    
+    return render_template('index.html')
+
+@app.route("/submit", methods=["POST"])
+def submit():
+    if request.method == "POST":
+        form_data = {
+            "name": request.form.get("name"),
+            "email": request.form.get("email"),
+            "phone": request.form.get("phone"),
+            "course": request.form.get("course"),
+            "gender": request.form.get("gender"),
+            "nationality": request.form.get("nationality"),
+            "previous_school": request.form.get("previous_school"),
+            "percentage": request.form.get("percentage"),
+            "city": request.form.get("city"),
+            "state": request.form.get("state")
+        }
+        return render_template("submit.html", form_data=form_data)
+
+if __name__ == '__main__':
     app.run(debug=True)

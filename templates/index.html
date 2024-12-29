@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="container">
+    <div class="form-container">
         <h1>College Admission Form</h1>
-        <form id="voiceForm">
+        <form id="voiceForm" method="POST" action="/submit">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <div class="input-wrapper">
-                    <input type="text" id="name" placeholder="Say your name" required>
+                    <input type="text" id="name" name="name" placeholder="Say your name" required>
                     <button type="button" class="mic-btn" data-field="name">
                         <img src="{{ url_for('static', filename='mic.svg') }}" alt="Microphone">
                     </button>
@@ -22,7 +22,7 @@
             <div class="form-group">
                 <label for="email">Email:</label>
                 <div class="input-wrapper">
-                    <input type="email" id="email" placeholder="Say your email" required>
+                    <input type="email" id="email" name="email" placeholder="Say your email" required>
                     <button type="button" class="mic-btn" data-field="email">
                         <img src="{{ url_for('static', filename='mic.svg') }}" alt="Microphone">
                     </button>
@@ -31,17 +31,8 @@
             <div class="form-group">
                 <label for="phone">Phone:</label>
                 <div class="input-wrapper">
-                    <input type="tel" id="phone" placeholder="Say your phone number" required>
+                    <input type="tel" id="phone" name="phone" placeholder="Say your phone number" required>
                     <button type="button" class="mic-btn" data-field="phone">
-                        <img src="{{ url_for('static', filename='mic.svg') }}" alt="Microphone">
-                    </button>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="address">Address:</label>
-                <div class="input-wrapper">
-                    <input type="text" id="address" placeholder="Say your address" required>
-                    <button type="button" class="mic-btn" data-field="address">
                         <img src="{{ url_for('static', filename='mic.svg') }}" alt="Microphone">
                     </button>
                 </div>
@@ -49,34 +40,70 @@
             <div class="form-group">
                 <label for="course">Course:</label>
                 <div class="input-wrapper">
-                    <input type="text" id="course" placeholder="Say your course" required>
+                    <input type="text" id="course" name="course" placeholder="Say your course" required>
                     <button type="button" class="mic-btn" data-field="course">
                         <img src="{{ url_for('static', filename='mic.svg') }}" alt="Microphone">
                     </button>
                 </div>
             </div>
             <div class="form-group">
-                <label for="dob">Date of Birth (DD-MM-YYYY):</label>
+                <label for="gender">Gender:</label>
                 <div class="input-wrapper">
-                    <input type="text" id="dob" placeholder="Say your date of birth" required>
-                    <button type="button" class="mic-btn" data-field="dob">
+                    <input type="text" id="gender" name="gender" placeholder="Say your gender" required>
+                    <button type="button" class="mic-btn" data-field="gender">
                         <img src="{{ url_for('static', filename='mic.svg') }}" alt="Microphone">
                     </button>
                 </div>
             </div>
-            
-            
             <div class="form-group">
-                <label for="gender">Gender:</label>
+                <label for="nationality">Nationality:</label>
                 <div class="input-wrapper">
-                    <input type="text" id="gender" placeholder="Say your gender" required>
-                    <button type="button" class="mic-btn" data-field="gender">
+                    <input type="text" id="nationality" name="nationality" placeholder="Say your nationality" required>
+                    <button type="button" class="mic-btn" data-field="nationality">
+                        <img src="{{ url_for('static', filename='mic.svg') }}" alt="Microphone">
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="previous_school">Previous School/University:</label>
+                <div class="input-wrapper">
+                    <input type="text" id="previous_school" name="previous_school" placeholder="Say your previous school/university" required>
+                    <button type="button" class="mic-btn" data-field="previous_school">
+                        <img src="{{ url_for('static', filename='mic.svg') }}" alt="Microphone">
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="percentage">Percentage:</label>
+                <div class="input-wrapper">
+                    <input type="text" id="percentage" name="percentage" placeholder="Say your percentage" required>
+                    <button type="button" class="mic-btn" data-field="percentage">
+                        <img src="{{ url_for('static', filename='mic.svg') }}" alt="Microphone">
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <div class="input-wrapper">
+                    <input type="text" id="city" name="city" placeholder="Say your city" required>
+                    <button type="button" class="mic-btn" data-field="city">
+                        <img src="{{ url_for('static', filename='mic.svg') }}" alt="Microphone">
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="state">State:</label>
+                <div class="input-wrapper">
+                    <input type="text" id="state" name="state" placeholder="Say your state" required>
+                    <button type="button" class="mic-btn" data-field="state">
                         <img src="{{ url_for('static', filename='mic.svg') }}" alt="Microphone">
                     </button>
                 </div>
             </div>
             <button type="submit" class="submit-btn">Submit</button>
         </form>
+        
+        
     </div>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>

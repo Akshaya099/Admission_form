@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="home-container">
+        <h1>Welcome to Our College</h1>
+        <p>
+            Explore our admission portal for easy and streamlined form submission. 
+            Join us to experience world-class education and an enriching campus life.
+        </p>
+        <a href="{{ url_for('signup') }}" class="btn">Get Started</a>
+        <a href="{{ url_for('login') }}" class="btn">Login</a>
+    </div>
+</body>
+</html>

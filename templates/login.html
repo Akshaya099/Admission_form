@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h1>Login</h1>
-        <form method="POST" action="/">
+        <form method="POST" action="{{ url_for('login') }}"> <!-- action is set to login route -->
             <div class="form-group">
                 <label for="email">Email:</label>
                 <div class="input-wrapper">

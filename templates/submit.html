@@ -1,0 +1,33 @@
+<!-- submit.html -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Successful</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="submit-container">
+        <h1>Submission Successful!</h1>
+        <p>Thank you for filling the form. Here is the information you provided:</p>
+        <ul>
+            <li><strong>Name:</strong> {{ form_data.name }}</li>
+            <li><strong>Email:</strong> {{ form_data.email }}</li>
+            <li><strong>Phone:</strong> {{ form_data.phone }}</li>
+            <li><strong>Course:</strong> {{ form_data.course }}</li>
+            <li><strong>Gender:</strong> {{ form_data.gender }}</li>
+            <li><strong>Nationality:</strong> {{ form_data.nationality }}</li>
+            <li><strong>Previous School:</strong> {{ form_data.previous_school }}</li>
+            <li><strong>Percentage:</strong> {{ form_data.percentage }}</li>
+            <li><strong>City:</strong> {{ form_data.city }}</li>
+            <li><strong>State:</strong> {{ form_data.state }}</li>
+        </ul>
+    </div>
+</body>
+</html>

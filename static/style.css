@@ -4,17 +4,19 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: Arial, sans-serif;
-    background: url('/static/adm_bg.jpg') no-repeat center center fixed; /* College-related background */
-    background-size: cover;
+    background: url('/static/clg_bg.png') no-repeat center center fixed; /* College-related background */
+    background-size: 100%; /* Zoom out effect */
     color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 135vh;
     position: relative;
+    overflow: hidden;
+}
+
 }
 
 /* Overlay for better readability */
@@ -23,24 +25,30 @@ body::before {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
+    width: 80%;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
     z-index: 0;
 }
 
 /* Shared Container Styling */
 .container {
-    background: rgba(255, 255, 255, 0.7); /* Translucent white background */
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 500px;
+    background: rgba(245, 233, 233, 0.9); /* Slight transparency */
+    padding: 1.5rem;
+    padding-top: 2rem; /* Increased top padding to lower the container */
+    
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     text-align: center;
-    z-index: 1;
+    max-width: 500px; /* Smaller max-width */
+    width: 40%; /* Reduce the width */
+    height: 375px; /* Adjusted height */
     position: relative;
+    z-index: 1;
+    overflow: hidden; /* Ensures content doesn't overflow */
 }
+
+
 
 /* Page Heading */
 h1 {
@@ -143,7 +151,7 @@ a:hover {
 
 /* Specific Styling for Login/Signup Forms */
 .login-signup-container {
-    padding: 2.5rem 2rem;
+    padding: 1rem 1rem;
 }
 
 .login-signup-container h1 {
@@ -178,5 +186,237 @@ a:hover {
     .mic-btn img {
         width: 18px;
         height: 18px;
+    }
+}
+
+
+/* Home Page Specific Styles */
+
+body.home-page {
+    background: url('/static/clg_bg.png') no-repeat center center fixed; /* Set custom background image */
+    background-size: 100%;
+    background-attachment: fixed;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Home Container */
+.home-container {
+    background: rgba(255, 255, 255, 0.9); /* Slight transparency */
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 600px;
+    width: 50%;
+    height: 60%; /* Adjusted height */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    margin-top: 1rem; /* Optional margin for spacing */
+}
+.home-container h1 {
+    font-size: 2.5rem; /* Reduced font size */
+    color: #1d3557; /* Deep blue */
+    margin-bottom: 1rem;
+    font-family: 'Verdana', sans-serif;
+    word-wrap: break-word; /* Ensures college name stays within the box */
+}
+
+.home-container p {
+    font-size: 1.1rem; /* Slightly smaller font size */
+    color: #333;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.home-container .btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 25px;
+    color: white;
+    background: linear-gradient(to right, #457b9d, #1d3557); /* Gradient blue */
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.home-container .btn:hover {
+    background: linear-gradient(to right, #1d3557, #457b9d);
+    transform: translateY(-3px);
+}
+
+/* style.css */
+
+/* General container for the submit page */
+body.submit-page{
+    background: url('/static/adm_bg.jpg')
+    background-size: 100%;
+    background-attachment: fixed;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.submit-container {
+    background: rgba(255, 255, 255, 0.9); /* Slight transparency */
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 50%;
+    height: 60%; /* Adjusted height */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    margin-top: 1rem; /* Optional margin for spacing */
+
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.submit-container h1 {
+    color: green;
+    text-align: center;
+}
+
+.submit-info {
+    margin: 20px 0;
+}
+
+.submit-info p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.submit-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #007BFF;
+}
+
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+
+/* Specific Style for the College Admission Form */
+.form-container {
+    background: rgba(255, 255, 255, 0.9); /* Slight transparency */
+    padding: 2rem;
+    border-radius: 25px; /* More curved corners */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    max-width: 800px; /* Wider form for readability */
+    width: 90%; /* Adjust for smaller screens */
+    overflow-y: auto; /* Enable scrolling for overflowing content */
+    max-height: 95vh; /* Ensure the form fits within the viewport */
+    margin-top: 20px; /* Added space at the top */
+    position: absolute; /* Allow it to start from the top of the page */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Center the form horizontally */
+}
+
+/* Form Header */
+.form-container h1 {
+    font-size: 2.5rem;
+    color: #2c3e50; /* Dark navy blue */
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Form Style */
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+/* Input/textarea/select styling */
+.form-group {
+    text-align: left;
+}
+
+.form-container label {
+    font-size: 1rem;
+    color: #444;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-container input,
+.form-container textarea,
+.form-container select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-container input:focus,
+.form-container textarea:focus,
+.form-container select:focus {
+    border-color: #2980b9; /* Blue focus border */
+}
+
+.form-container textarea {
+    resize: none;
+}
+
+/* Button Styling */
+.form-container button {
+    background: linear-gradient(to right, #2980b9, #6dd5fa); /* Gradient blue */
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.form-container button:hover {
+    background: linear-gradient(to right, #6dd5fa, #2980b9); /* Reverse gradient */
+    transform: translateY(-2px);
+}
+
+/* Responsive Styling for Smaller Screens */
+@media (max-width: 480px) {
+    .form-container {
+        padding: 1.5rem;
+        width: 95%; /* Full width for small screens */
+    }
+
+    .form-container h1 {
+        font-size: 2rem;
+    }
+
+    .form-container input,
+    .form-container textarea,
+    .form-container select {
+        font-size: 0.9rem;
+    }
+
+    .form-container button {
+        font-size: 0.9rem;
+        padding: 0.7rem;
     }
 }
