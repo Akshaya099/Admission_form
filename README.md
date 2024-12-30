@@ -9,7 +9,7 @@ The project is deployed and available at: [**VOICE FORM**](<https://voice-based-
 - **Voice Input**: Speak your responses instead of typing, enhancing accessibility and speed.  
 - **Web Speech API Integration**: Real-time speech-to-text conversion for smooth interaction.  
 - **Modern & Transparent UI**: A visually appealing, responsive design with a semi-transparent form overlay.  
-- **Multi-field Data Collection**: Captures user details like Name, Email, Phone, Date of Birth, Gender, Education, and Course.  
+- **Multi-field Data Collection**: Captures user details like Name, Email, Gender, Education, and Course, and more.
 - **Flask Backend**: Manages form submissions and processing efficiently.  
 - **MySQL Database**: Securely stores user information for easy access and management.  
 - **Deployed Solution**: Fully hosted and live for real-world usage.  
