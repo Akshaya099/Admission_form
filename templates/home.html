@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+
     <div class="home-container">
         <h1>Welcome to Our College</h1>
         <p>
@@ -16,5 +17,24 @@
         <a href="{{ url_for('signup') }}" class="btn">Get Started</a>
         <a href="{{ url_for('login') }}" class="btn">Login</a>
     </div>
+    <div id="chatbot-container">
+        <button id="chatbot-icon">
+            <img src="{{ url_for('static', filename='chatbot-icon.png') }}" alt="Chatbot">
+        </button>
+        <div id="chat-popup" class="hidden">
+            <div id="chat-header">
+                <span>Chatbot</span>
+                <button id="close-chat">X</button>
+            </div>
+            <div id="chat-body">
+                <p id="prompt">Hello! How can I help you?</p>
+            </div>
+            <div id="chat-footer">
+                <button id="mic-btn">🎤</button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='chatbot.js') }}"></script>
+
 </body>
 </html>
